@@ -17,7 +17,6 @@ Definindo estrutura de pastas:
     ├── models          // diretório com as entidades / models do ORM
     ├── repositories    // diretório com a comunicação ao banco através do ORM
     ├── services        // diretório com os processamentos para as requests
-    └── utils           // diretório com funcionalidades em comum no projeto.
 ```
 
 
