@@ -1,10 +1,13 @@
 const express = require('express');
 const userController = require('./controllers/userController');
 const swaggerUI = require("swagger-ui-express");
+const gameController = require('./controllers/gameController');
+
 
 const app = express();
 app.use(express.json());
 app.use('/api/user', userController);
+app.use('/api', gameController);
 
 
 
