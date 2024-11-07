@@ -39,11 +39,12 @@ router.put('/games/:id', authenticateToken, async (req, res) => {
     }
 });
 
-router.delete('/games/:id', authenticateToken, async (req, res) => {
+router.delete('/games/:id',authenticateToken , async (req, res) => {
     try {
         await gameService.deleteGame(req.params.id);
         res.sendStatus(204);
     } catch (error) {
+        console.error("erro ao excluir o jogo.", error);
         res.status(400).json({ error: error.message });
     }
 });

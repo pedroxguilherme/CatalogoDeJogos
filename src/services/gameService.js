@@ -22,8 +22,10 @@ class GameService {
     }
 
     async deleteGame(id) {
-        const deleted = await gameRepository.deleteGame(id);
-        if (!deleted) throw new Error('Game not found');
+        const game = await gameRepository.getGameById(id);
+        if (!game) throw new Error('Game not found');
+        await game.destroy();
+        return;
     }
 }
 

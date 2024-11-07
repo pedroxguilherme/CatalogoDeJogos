@@ -14,7 +14,7 @@ class gameRepository {
     }
     async updateGame(id, game){
         await Game.update(game, {where: { id }})
-        return this.getGameByID(id);
+        return Game.findByPk(id)
 
     }
     async deleteGame(id){
