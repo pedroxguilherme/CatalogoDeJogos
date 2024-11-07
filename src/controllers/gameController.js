@@ -32,9 +32,22 @@ router.get('/games/:id', authenticateToken, async (req, res) => {
 
 router.put('/games/:id', authenticateToken, async (req, res) => {
     try {
-        const game = await gameService.updateGame(req.params.id, req.body);
-        res.json(game);
+        // Dados enviados no corpo da requisição
+        const { titulo, genero, anoLancamento } = req.body;
+
+        // Verificar se os dados necessários estão presentes
+        if (!titulo || !genero || !anoLancamento) {
+            return res.status(400).json({ error: 'Título, gênero e ano de lancamento são obrigatórios' });
+        }
+
+        // Chamada ao serviço para atualizar o jogo
+        const updatedGame = await gameService.updateGame(req.params.id, { titulo, genero, anoLancamento });
+
+        // Se o jogo foi atualizado com sucesso, envia a resposta
+        res.json(updatedGame);
     } catch (error) {
+        // Captura e envia o erro caso algo dê errado
+        console.error("Erro ao atualizar o jogo:", error);
         res.status(400).json({ error: error.message });
     }
 });
