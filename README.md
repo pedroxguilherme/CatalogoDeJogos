@@ -28,3 +28,15 @@ Pacotes que iremos utiilizar:
 - [Sequelize](https://sequelize.org/docs/v6/getting-started/): ORM para comunicação com Banco de Dados
 - [sqlite3](https://www.sqlite.org/): Banco de dados local
 - uuid: gerador de ids no formato guid
+
+
+Criação/Execução Docker:
+
+Para criar conteiner:
+
+Docker build: $ docker build . -t (nome-projeto)
+
+Para executar o conteiner:
+
+docker run -p 8080:3000 (nome-projeto)
+
