@@ -5,14 +5,6 @@ Este projeto é baseado em um catalogo de jogos , onde uma API construida para g
 
 
 
-Cria-se uma imagem com Node.js.(FROM node:20.17.0)
-- Define-se o diretório de trabalho para /app.(WORKDIR /app)
-- Copia-se os arquivos package.json e package-lock.json.(COPY package*.json ./)
-- Instala-se as dependências com npm install.(RUN npm install)
-- Copia-se o código da aplicação.(COPY . .)
-- Define-se a porta 3000 como a porta de comunicação da aplicação.(EXPOSE 3000)
-- Executa-se o servidor com node ./src/server.js.(CMD ["node", "./src/server.js"])
-- Esta configuração facilita o desenvolvimento e a distribuição, pois encapsula toda a aplicação e suas dependências em um contêiner Docker.
 
 Para criar conteiner: 
 ```
@@ -42,6 +34,9 @@ Para executar o conteiner em segundo plano:
 docker run -d -p 8080:3000 nome-da-imagem
 ```
 - Executar em Segundo Plano (Modo Detached) (opcional): Para que o contêiner seja executado em segundo plano, adicione a flag -d:
+
+
+
 
 Rota Inicial Documentação: 
 ```
