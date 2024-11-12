@@ -3,7 +3,7 @@
 
 Este projeto é baseado em um catalogo de jogos , onde uma API construida para gerenciar uma coleção de jogos. É um servidor Web construído com Node.Js e Express.
 
-
+Para rodar o projeto é necessário docker instalado e rodando para seguir os comandos abaixo.
 
 
 Para criar conteiner: 
@@ -29,7 +29,7 @@ docker build -t nome-da-imagem.
 
 
 
-Para executar o conteiner em segundo plano:
+Para executar o conteiner em segundo plano (OPCIONAL):
 ```
 docker run -d -p 8080:3000 nome-da-imagem
 ```
@@ -40,7 +40,7 @@ docker run -d -p 8080:3000 nome-da-imagem
 
 Rota Inicial Documentação: 
 ```
-http://localhost:3000/api-docs
+http://localhost:8080/api-docs
 ```
 - A rota /api-docs é onde o Swagger disponibiliza a documentação da API. 
 Quando se acessa http://localhost:3000/api-docs, o Swagger carrega uma interface interativa que permite explorar, 
